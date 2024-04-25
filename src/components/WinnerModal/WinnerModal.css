@@ -4,7 +4,7 @@
   position: absolute;
   top: 0;
   backdrop-filter: blur(5px);
-  animation: appear 5s forwards;
+  animation: appearr 5s forwards;
 }
 .modal {
   background-color: rgba(29, 71, 154, 0.671);
@@ -20,20 +20,22 @@
     transform: scale(110%);
   }
 }
-
-@keyframes appear {
+@keyframes appearr {
   0% {
-    transform: scale(2);
+    transform: scale(22);
     filter: blur(4px);
+    opacity: 0;
+  }
+  20% {
+    filter: blur(0px);
   }
   25% {
     transform: scale(1);
-    filter: blur(0px);
     opacity: 1;
   }
   95% {
     transform: scale(1);
-    opacity: 0.95;
+    opacity: 1;
   }
   100% {
     transform: scale(0);

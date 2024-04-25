@@ -93,14 +93,25 @@ function App() {
       <h1>TaTeTi</h1>
       <section>
         {winner && <WinnerModal winner={winner} resetGame={resetGame} />}
+        {winner == "Fue un Empate" && (
+          <div className='turn'>
+            <h2>{winner}</h2>
+          </div>
+        )}
+        {winner && (
+          <div>
+            <h2>El ganador es</h2>
+            <div className='turn'>
+              <img src={winner} alt={winner} />
+            </div>
+          </div>
+        )}
         {!winner && (
           <div>
             <h2>Turno de</h2>
-            <h2>
-              <strong className='turn'>
-                <img src={turn} alt='xxx' />
-              </strong>
-            </h2>
+            <div className='turn'>
+              <img src={turn} alt='xxx' />
+            </div>
           </div>
         )}
       </section>
