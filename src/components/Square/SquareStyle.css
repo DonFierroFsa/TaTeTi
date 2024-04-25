@@ -1,0 +1,34 @@
+.emptyCell {
+  font-size: 3rem;
+  border: 2px solid black;
+  width: 6rem;
+  height: 6rem;
+  cursor: pointer;
+  border-radius: 15px;
+  margin: 3px 2px;
+  display: grid;
+  place-items: center;
+}
+
+.emptyCell:hover {
+  border: 4px solid rgba(255, 255, 255, 0.392);
+  margin: 1px 0px;
+  background-color: rgba(83, 183, 254, 0.296);
+}
+.cell {
+  font-size: 3rem;
+  border: 2px solid black;
+  width: 6rem;
+  height: 6rem;
+  cursor: pointer;
+  border-radius: 15px;
+  margin: 3px 2px;
+  display: grid;
+  place-items: center;
+}
+
+.cell:hover {
+  border: 4px solid rgba(188, 16, 16, 0.392);
+  margin: 1px 0px;
+  background-color: rgba(252, 32, 32, 0.296);
+}

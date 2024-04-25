@@ -1,0 +1,30 @@
+h1,
+h2 {
+  text-align: center;
+}
+main {
+  padding-top: 4rem;
+}
+.gameContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: fit-content;
+}
+.btn-container {
+  display: flex;
+}
+.turn {
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 2px 20px;
+  width: fit-content;
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+}

@@ -1,0 +1,41 @@
+#modalContainer {
+  min-height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  backdrop-filter: blur(5px);
+  animation: appear 5s forwards;
+}
+.modal {
+  background-color: rgba(29, 71, 154, 0.671);
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 15px;
+  z-index: 10;
+  margin-top: 8rem;
+  padding: 1px 15px;
+  display: flex;
+  flex-direction: column;
+  && img {
+    transform: scale(110%);
+  }
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(2);
+    filter: blur(4px);
+  }
+  25% {
+    transform: scale(1);
+    filter: blur(0px);
+    opacity: 1;
+  }
+  95% {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(0);
+  }
+}
