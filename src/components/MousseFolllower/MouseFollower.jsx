@@ -21,11 +21,9 @@ export default function MouseFollower({ turn }) {
     <div
       style={{
         position: "absolute",
-        width: "2rem",
-        height: "2rem",
-        top: "2rem",
-        left: "-1rem",
         borderRadius: "50%",
+        top: "-30px",
+        left: "-20px",
         pointerEvents: "none",
         transform: `translate(${position.x}px,${position.y}px)`,
       }}>
