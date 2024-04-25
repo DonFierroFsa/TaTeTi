@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import confetti from "canvas-confetti";
 import Square from "./components/Square/Square";
 import { players, winnerCombos } from "./logic/constants";
 import WinnerModal from "./components/WinnerModal/WinnerModal";
 import BtnReset from "./components/BtnReset/BtnReset";
+import MouseFollower from "./components/MousseFolllower/MouseFollower";
 
 function App() {
   const initialBoard = Array(9).fill(null);
@@ -89,48 +90,51 @@ function App() {
   };
 
   return (
-    <main>
-      <h1>TaTeTi</h1>
-      <section>
-        {winner && <WinnerModal winner={winner} resetGame={resetGame} />}
-        {winner == "Fue un Empate" && (
-          <div className='turn'>
-            <h2>{winner}</h2>
-          </div>
-        )}
-        {winner && (
-          <div>
-            <h2>El ganador es</h2>
+    <>
+      <MouseFollower turn={turn} />
+      <main>
+        <h1>TaTeTi</h1>
+        <section>
+          {winner && <WinnerModal winner={winner} resetGame={resetGame} />}
+          {winner == "Fue un Empate" && (
             <div className='turn'>
-              <img src={winner} alt={winner} />
+              <h2>{winner}</h2>
             </div>
-          </div>
-        )}
-        {!winner && (
-          <div>
-            <h2>Turno de</h2>
-            <div className='turn'>
-              <img src={turn} alt='xxx' />
+          )}
+          {winner && winner != "Fue un Empate" && (
+            <div>
+              <h2>El ganador es</h2>
+              <div className='turn'>
+                <img src={winner} alt={winner} />
+              </div>
             </div>
+          )}
+          {!winner && (
+            <div>
+              <h2>Turno de</h2>
+              <div className='turn'>
+                <img src={turn} alt='xxx' />
+              </div>
+            </div>
+          )}
+        </section>
+        <section className='gameContainer'>
+          <div className='game'>
+            {board.map((cell, index) => {
+              return (
+                <Square key={index} index={index} handleGame={handleGame}>
+                  {cell && <img src={cell} alt='xx' />}
+                </Square>
+              );
+            })}
           </div>
-        )}
-      </section>
-      <section className='gameContainer'>
-        <div className='game'>
-          {board.map((cell, index) => {
-            return (
-              <Square key={index} index={index} handleGame={handleGame}>
-                {cell && <img src={cell} alt='xx' />}
-              </Square>
-            );
-          })}
-        </div>
-        <div className='btn-container'>
-          <BtnReset fun={resetGame} text={"LIMPIAR"} />
-          <BtnReset fun={goBack} text={"VOLVER"} />
-        </div>
-      </section>
-    </main>
+          <div className='btn-container'>
+            <BtnReset fun={resetGame} text={"LIMPIAR"} />
+            <BtnReset fun={goBack} text={"VOLVER"} />
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
 

@@ -2,8 +2,9 @@ h1,
 h2 {
   text-align: center;
 }
+
 main {
-  padding-top: 4rem;
+  padding-top: 2rem;
 }
 .gameContainer {
   display: flex;

@@ -3,7 +3,7 @@
   border: 2px solid black;
   width: 6rem;
   height: 6rem;
-  cursor: pointer;
+  cursor: none;
   border-radius: 15px;
   margin: 3px 2px;
   display: grid;
@@ -20,8 +20,8 @@
   border: 2px solid black;
   width: 6rem;
   height: 6rem;
-  cursor: pointer;
   border-radius: 15px;
+  cursor: not-allowed;
   margin: 3px 2px;
   display: grid;
   place-items: center;

@@ -1,16 +1,18 @@
 import React from "react";
 import "./WinnerModal.css";
 import BtnReset from "../BtnReset/BtnReset";
+import { players } from "../../logic/constants";
 export default function WinnerModal({ winner, resetGame }) {
   const handleModal = (e) => {
     if (e.target.id == "modalContainer") {
       resetGame();
     }
   };
+  const classNameWinner = winner == players.x ? "modal-goku" : "modal-vegeta";
   return (
     <div onClick={handleModal} id='modalContainer'>
-      <div className='modal'>
-        <h2>Juego Terminado </h2>
+      <div className={classNameWinner}>
+        <h2>Juego Terminado</h2>
         {winner == "Fue un Empate" ? (
           <div className='turn'>
             <h2>{winner}</h2>
