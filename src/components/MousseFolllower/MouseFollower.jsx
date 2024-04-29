@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./MouseFollower.css";
 
+//Sacar el style del div
+//Animaciones de Salida
+
 export default function MouseFollower({ turn }) {
   const [position, setPosition] = useState({ x: -100, y: -100 });
 
@@ -16,7 +19,7 @@ export default function MouseFollower({ turn }) {
     return () => {
       gameSquare.removeEventListener("pointermove", handleMove);
     };
-  });
+  }, [position]);
   return (
     <div
       style={{
@@ -27,7 +30,7 @@ export default function MouseFollower({ turn }) {
         pointerEvents: "none",
         transform: `translate(${position.x}px,${position.y}px)`,
       }}>
-      <img src={turn} alt='' />
+      <img className='imgCursor' src={turn} alt='' />
     </div>
   );
 }
