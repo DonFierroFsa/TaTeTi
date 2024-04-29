@@ -25,7 +25,7 @@ export default function MouseFollower({ turn }) {
       style={{
         position: "absolute",
         borderRadius: "50%",
-        top: "-30px",
+        top: "-20px",
         left: "-20px",
         pointerEvents: "none",
         transform: `translate(${position.x}px,${position.y}px)`,
